@@ -1,13 +1,31 @@
 module StyleSheet exposing (..)
 
-import Color exposing (..)
 import Style exposing (..)
 import Style.Color as Color
 import StyleTags exposing (..)
+import ColorPalette exposing (..)
 
 
 stylesheet =
     Style.styleSheet
-        [ Style.style Heading
-            [ Color.text <| rgb 200 100 58 ]
+        [ Style.style Navigation
+            [ Color.text white
+            , Color.background blue
+            ]
+        , Style.style Header
+            [ Color.text blue
+            , Color.background white
+            ]
+        , Style.style SubHeading
+            [ Color.text darkViolet
+            , Color.background white
+            ]
+        , Style.style Body
+            [ Color.text blue
+            , Color.background white
+            ]
+        , Style.style Footer
+            [ Color.text lightViolet
+            , Color.background blue
+            ]
         ]

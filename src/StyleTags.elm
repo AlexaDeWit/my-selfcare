@@ -2,4 +2,8 @@ module StyleTags exposing (..)
 
 
 type Styles
-    = Heading
+    = Navigation
+    | Header
+    | SubHeading
+    | Body
+    | Footer

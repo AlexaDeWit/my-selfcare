@@ -72,7 +72,7 @@ subscriptions model =
 view : Model -> Html Msg
 view model =
     Element.layout stylesheet <|
-        el Heading [] (Maybe.withDefault "Sign Up!" model.username |> text)
+        el Navigation [] (Maybe.withDefault "Sign Up!" model.username |> text)
 
 
 
