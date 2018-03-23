@@ -11,7 +11,7 @@ import Element exposing (..)
 
 main =
     Html.program
-        { init = (model, Cmd.none)
+        { init = ( model, Cmd.none )
         , view = view
         , update = update
         , subscriptions = subscriptions
@@ -46,24 +46,31 @@ type Msg
 -- Update
 
 
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model = 
-  let
-    mdl = case msg of
-        DisplayMessage message ->
-            { model | message = message }
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    let
+        mdl =
+            case msg of
+                DisplayMessage message ->
+                    { model | message = message }
 
-        UpdateUsername username ->
-            { model | username = Just username }
-    msgp = Cmd.none
-  in 
-     (mdl, msgp)
+                UpdateUsername username ->
+                    { model | username = Just username }
+
+        msgp =
+            Cmd.none
+    in
+        ( mdl, msgp )
+
+
 
 -- Subscriptions
 
+
 subscriptions : Model -> Sub Msg
 subscriptions model =
-  Sub.none
+    Sub.none
+
 
 
 -- View
@@ -72,7 +79,11 @@ subscriptions model =
 view : Model -> Html Msg
 view model =
     Element.layout stylesheet <|
-        el Navigation [] (Maybe.withDefault "Sign Up!" model.username |> text)
+        [ el Navigation [] (Maybe.withDefault "Sign Up!" model.username |> text)
+        , el Header [] (text "Welcome to My SelfCare")
+        , el Body [] (text "Here is an example of the body")
+        , el Footer [] (text "Here is some Footer stuff")
+        ]
 
 
 

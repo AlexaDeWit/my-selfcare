@@ -7,3 +7,4 @@ type Styles
     | SubHeading
     | Body
     | Footer
+    | NoStyle
