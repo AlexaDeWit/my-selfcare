@@ -7,13 +7,10 @@
 ## Building
 
 - `yarn install`
-- `yarn run make`
 
 ## Running
 
-A word of caution: elm-reactor is nice but will not load the index.html document that is used to contain the js side of things needed for [ports](https://guide.elm-lang.org/interop/javascript.html)
-
-After running `yarn run make`, you will should be able to load `dist/index.html` directly and get the appropriately compiled application
+- `yarn run dev` -- This will fire up the webpack dev server at localhsot:8080
 
 ### Server Data Mocks
 
