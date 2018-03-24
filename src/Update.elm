@@ -16,7 +16,7 @@ update msg model =
                     { model | message = message }
 
                 UpdateUsername username ->
-                    { model | username = Just username }
+                    { model | user = Just { username = username } }
 
         msgp =
             Cmd.none

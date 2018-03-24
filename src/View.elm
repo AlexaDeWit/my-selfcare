@@ -5,6 +5,7 @@ import Element exposing (..)
 import Element.Attributes exposing (..)
 import Style.StyleTags exposing (..)
 import Style.StyleSheet exposing (..)
+import Pages.Login exposing (..)
 import Model exposing (..)
 import Msg exposing (..)
 
@@ -14,6 +15,16 @@ import Msg exposing (..)
 
 view : Model -> Html Msg
 view model =
+    case model.user of
+        Just _ ->
+            defaultPage model
+
+        Nothing ->
+            login
+
+
+defaultPage : Model -> Html Msg
+defaultPage model =
     Element.layout stylesheet <|
         column Main
             []
@@ -26,11 +37,11 @@ view model =
 
 nav : Model -> Element Styles variation msg
 nav model =
-    row Navigation
+    wrappedRow Navigation
         [ padding 10, spread, verticalCenter ]
         [ logo
         , el NoStyle [] (text "Menu Elements")
-        , el NoStyle [] (Maybe.withDefault "Sign Up!" model.username |> text)
+        , el NoStyle [] (Maybe.withDefault "Sign Up!" (Maybe.map (\u -> u.username) model.user) |> text)
         ]
 
 

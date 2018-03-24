@@ -4,6 +4,11 @@ module Model exposing (..)
 
 
 type alias Model =
-    { username : Maybe String
+    { user : Maybe User
     , message : String
+    }
+
+
+type alias User =
+    { username : String
     }
