@@ -8,3 +8,4 @@ type Styles
     | Body
     | Footer
     | NoStyle
+    | Main

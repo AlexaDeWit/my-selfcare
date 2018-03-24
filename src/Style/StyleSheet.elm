@@ -29,4 +29,5 @@ stylesheet =
             , Color.background blue
             ]
         , Style.style NoStyle []
+        , Style.style Main []
         ]
