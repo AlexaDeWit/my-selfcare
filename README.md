@@ -13,4 +13,4 @@
 
 ### Server Data Mocks
 
-- `cd json-mocks && yarn run start`
+- `cd json-mocks && yarn install && yarn run start`
