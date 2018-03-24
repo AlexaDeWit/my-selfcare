@@ -1,4 +1,4 @@
-module Pages.Login exposing (..)
+module Pages.Login exposing (login)
 
 import Html exposing (Html)
 import Element exposing (..)
@@ -7,6 +7,8 @@ import Style.StyleTags exposing (..)
 import Style.StyleSheet exposing (..)
 import Model exposing (..)
 import Msg exposing (..)
+import Element.Input as Input
+import Elements exposing (..)
 
 
 --The Login Page, for now is just static html, and consumed by the view page if a user model is missing
@@ -17,5 +19,15 @@ login =
     Element.layout stylesheet <|
         column Main
             []
-            [ el NoStyle [] (text "login!")
+            [ usernameText
+            , passwordText
+            , button NoStyle [] (text "Login")
             ]
+
+
+usernameText =
+    basicTextEntry NoStyle "Username" [] (\t -> UpdateUsername t) Input.text
+
+
+passwordText =
+    basicTextEntry NoStyle "Password" [] (\t -> UpdateUsername t) Input.currentPassword
