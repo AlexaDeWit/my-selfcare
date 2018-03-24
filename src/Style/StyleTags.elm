@@ -1,4 +1,4 @@
-module StyleTags exposing (..)
+module Style.StyleTags exposing (..)
 
 
 type Styles

@@ -1,9 +1,9 @@
-module StyleSheet exposing (..)
+module Style.StyleSheet exposing (..)
 
 import Style exposing (..)
 import Style.Color as Color
-import StyleTags exposing (..)
-import ColorPalette exposing (..)
+import Style.StyleTags exposing (..)
+import Style.ColorPalette exposing (..)
 
 
 stylesheet =

@@ -2,8 +2,8 @@ module View exposing (..)
 
 import Html exposing (Html)
 import Element exposing (..)
-import StyleTags exposing (..)
-import StyleSheet exposing (..)
+import Style.StyleTags exposing (..)
+import Style.StyleSheet exposing (..)
 import Model exposing (..)
 import Msg exposing (..)
 
