@@ -10,6 +10,9 @@ import Update exposing (..)
 import Subscriptions exposing (..)
 
 
+-- The main entry point. This define how the "program" should be set up, which functions should handle updates, presentations(view), and so on.
+
+
 main =
     Html.program
         { init = init
@@ -17,6 +20,10 @@ main =
         , update = update
         , subscriptions = subscriptions
         }
+
+
+
+-- This function constructs the initial state of the elm application. It's how we "start"
 
 
 init : ( Model, Cmd Msg )

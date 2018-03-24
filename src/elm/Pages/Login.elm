@@ -9,6 +9,9 @@ import Model exposing (..)
 import Msg exposing (..)
 
 
+--The Login Page, for now is just static html, and consumed by the view page if a user model is missing
+
+
 login : Html Msg
 login =
     Element.layout stylesheet <|

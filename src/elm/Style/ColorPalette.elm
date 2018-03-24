@@ -3,6 +3,9 @@ module Style.ColorPalette exposing (..)
 import Color exposing (..)
 
 
+-- Functions to retrieve our colours for use in the application
+
+
 white : Color
 white =
     rgb 248 247 246
