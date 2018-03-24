@@ -2,3 +2,5 @@ elm-stuff
 .idea
 elm.js
 main.html
+yarn.lock
+node_modules

@@ -1,0 +1,12 @@
+{
+  "name": "json-mocks",
+  "version": "0.1.0",
+  "description": "Mocking data for the client-side application",
+  "main": "index.js",
+  "repository": "https://github.com/AlexaDeWit/my-selfcare",
+  "author": "Alexandra DeWit",
+  "license": "GPL3",
+  "dependencies": {
+    "json-server": "^0.12.1"
+  }
+}
