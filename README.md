@@ -3,9 +3,6 @@
 ## Setup
 
 - Install Node, Yarn, and Elm
-
-## Building
-
 - `yarn install`
 
 ## Running
