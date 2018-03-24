@@ -1,4 +1,6 @@
-var path = require("path");
+const path = require("path");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -6,6 +8,17 @@ module.exports = {
       './src/js/index.js'
     ]
   },
+
+  plugins: [
+    new WriteFilePlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: 'assets/static/*',
+        to: 'assets/[name].[ext]',
+        toType: 'template'
+      }
+    ], {})
+  ],
 
   output: {
     path: path.resolve(__dirname + '/dist'),

@@ -24,6 +24,7 @@ main =
 
 
 -- This function constructs the initial state of the elm application. It's how we "start"
+-- If for development purposes you want to initialize the application directly to a certain state, this is the tool you'd use to do that!
 
 
 init : ( Model, Cmd Msg )
