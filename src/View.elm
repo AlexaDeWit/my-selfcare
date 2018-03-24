@@ -27,7 +27,7 @@ view model =
 nav : Model -> Element Styles variation msg
 nav model =
     row Navigation
-        [ padding 10, spacing 20, spread, verticalCenter ]
+        [ padding 10, spread, verticalCenter ]
         [ logo
         , el NoStyle [] (text "Menu Elements")
         , el NoStyle [] (Maybe.withDefault "Sign Up!" model.username |> text)
