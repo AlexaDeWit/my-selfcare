@@ -5,9 +5,11 @@ require('font-awesome/css/font-awesome.css');
 
 // Require index.html so it gets copied to dist
 require('../html/index.html');
+const Elm = require('../elm/Main.elm');
+const mountNode = document.getElementById('main');
+const app = Elm.Main.embed(mountNode);
 
-var Elm = require('../elm/Main.elm');
-var mountNode = document.getElementById('main');
+//Ports
+const localStoragePorts = require("elm-local-storage-ports");
 
-// .embed() can take an optional second argument. This would be an object describing the data we need to start a program, i.e. a userID or some token
-var app = Elm.Main.embed(mountNode);
+localStoragePorts.register(app.ports);

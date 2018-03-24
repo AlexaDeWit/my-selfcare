@@ -11,16 +11,22 @@ import Msg exposing (..)
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    let
-        mdl =
-            case msg of
-                DisplayMessage message ->
-                    { model | message = message }
+    case msg of
+        DisplayMessage message ->
+            noOp { model | message = message }
 
-                UpdateUsername username ->
-                    { model | user = Just { username = username } }
+        UpdateUsername username ->
+            noOp { model | user = Just { username = username } }
 
-        msgp =
-            Cmd.none
-    in
-        ( mdl, msgp )
+        LocalStorage event ->
+            localStorageUpdates event model
+
+
+noOp : Model -> ( Model, Cmd Msg )
+noOp model =
+    ( model, Cmd.none )
+
+
+localStorageUpdates : LocalStorageEvent -> Model -> ( Model, Cmd Msg )
+localStorageUpdates event model =
+    ( model, Cmd.none )
