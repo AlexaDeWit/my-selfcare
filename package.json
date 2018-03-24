@@ -10,6 +10,6 @@
     "elm-local-storage-ports": "0.2.1"
   },
   "scripts": {
-    "make": "elm-make src/Main.elm --output=dist/Main.js"
+    "make": "elm-make src/elm/Main.elm --output=dist/Main.js && cp src/html/index.html dist/index.html"
   }
 }
