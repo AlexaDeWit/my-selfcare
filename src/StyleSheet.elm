@@ -13,7 +13,7 @@ stylesheet =
             , Color.background blue
             ]
         , Style.style Header
-            [ Color.text lightViolet
+            [ Color.text white
             , Color.background darkViolet
             ]
         , Style.style SubHeading
@@ -25,7 +25,7 @@ stylesheet =
             , Color.background white
             ]
         , Style.style Footer
-            [ Color.text lightViolet
+            [ Color.text white
             , Color.background blue
             ]
         , Style.style NoStyle []

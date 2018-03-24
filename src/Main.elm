@@ -79,11 +79,13 @@ subscriptions model =
 view : Model -> Html Msg
 view model =
     Element.layout stylesheet <|
-        [ el Navigation [] (Maybe.withDefault "Sign Up!" model.username |> text)
-        , el Header [] (text "Welcome to My SelfCare")
-        , el Body [] (text "Here is an example of the body")
-        , el Footer [] (text "Here is some Footer stuff")
-        ]
+        column NoStyle
+            []
+            [ el Navigation [] (Maybe.withDefault "Sign Up!" model.username |> text)
+            , el Header [] (text "Welcome to My SelfCare")
+            , el Body [] (text "Here is an example of the body")
+            , el Footer [] (text "Here is some Footer stuff")
+            ]
 
 
 
