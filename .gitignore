@@ -4,3 +4,5 @@ elm.js
 main.html
 yarn.lock
 node_modules
+*.log
+dist/Main.js

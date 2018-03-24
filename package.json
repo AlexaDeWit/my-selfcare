@@ -1,0 +1,12 @@
+{
+  "name": "my-selfcare",
+  "version": "0.1.0",
+  "description": "Frontend for a SaaS application allowing people to write diaries to themselves and other self-care utilities for improving mental health.",
+  "main": "main.js",
+  "repository": "git@github.com:AlexaDeWit/my-selfcare.git",
+  "author": "Alexandra DeWit <alexa.dewit@gmail.com>",
+  "license": "GNU GPLv3",
+  "scripts": {
+    "make": "elm-make src/Main.elm --output=dist/Main.js"
+  }
+}
