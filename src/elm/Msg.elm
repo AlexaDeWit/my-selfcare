@@ -9,9 +9,13 @@ import Json.Decode exposing (..)
 
 
 type Msg
-    = DisplayMessage String
-    | UpdateUsername String
+    = Login LoginForm
     | LocalStorage LocalStorageEvent
+
+
+type LoginForm
+    = UpdateUsername String
+    | UpdatePassword String
 
 
 type LocalStorageEvent

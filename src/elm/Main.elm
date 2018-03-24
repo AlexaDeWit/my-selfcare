@@ -23,4 +23,4 @@ main =
 
 defaultModel : Model
 defaultModel =
-    Model Nothing "Welcome To Empty App Thing"
+    Model Nothing (LoginFormData "" "")

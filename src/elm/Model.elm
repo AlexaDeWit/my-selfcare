@@ -7,10 +7,16 @@ module Model exposing (..)
 type alias Model =
     -- Maybe indicates a type that may be Present, ie. Just User, or missing, ie. Nothing This lets us represent the idea of loading the application without a user
     { user : Maybe User
-    , message : String
+    , loginFormData : LoginFormData
     }
 
 
 type alias User =
     { username : String
+    }
+
+
+type alias LoginFormData =
+    { username : String
+    , password : String
     }

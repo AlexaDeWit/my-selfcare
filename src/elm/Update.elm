@@ -12,11 +12,11 @@ import Msg exposing (..)
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        DisplayMessage message ->
-            noOp { model | message = message }
+        Login (UpdateUsername username) ->
+            noOp <| updateFormData (\f -> { f | username = username }) model
 
-        UpdateUsername username ->
-            noOp { model | user = Just { username = username } }
+        Login (UpdatePassword password) ->
+            noOp <| updateFormData (\f -> { f | password = password }) model
 
         LocalStorage event ->
             localStorageUpdates event model
@@ -25,6 +25,19 @@ update msg model =
 noOp : Model -> ( Model, Cmd Msg )
 noOp model =
     ( model, Cmd.none )
+
+
+
+--ToDO Bring In Lenses
+
+
+updateFormData : (LoginFormData -> LoginFormData) -> Model -> Model
+updateFormData f m =
+    let
+        data =
+            f m.loginFormData
+    in
+        { m | loginFormData = data }
 
 
 localStorageUpdates : LocalStorageEvent -> Model -> ( Model, Cmd Msg )
