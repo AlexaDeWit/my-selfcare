@@ -7,9 +7,19 @@
   "author": "Alexandra DeWit <alexa.dewit@gmail.com>",
   "license": "GNU GPLv3",
   "dependencies": {
-    "elm-local-storage-ports": "0.2.1"
+    "ace-css": "1.1",
+    "css-loader": "^0.28.11",
+    "elm-local-storage-ports": "0.2.1",
+    "elm-webpack-loader": "^4.5.0",
+    "file-loader": "^1.1.11",
+    "font-awesome": "4",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
   },
   "scripts": {
-    "make": "elm-make src/elm/Main.elm --output=dist/Main.js && cp src/html/index.html dist/index.html"
+    "dev": "webpack-dev-server"
   }
 }
