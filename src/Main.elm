@@ -6,42 +6,24 @@ import Html.Events exposing (..)
 import Model exposing (..)
 import View exposing (..)
 import Msg exposing (..)
+import Update exposing (..)
+import Subscriptions exposing (..)
 
 
 main =
     Html.program
-        { init = ( model, Cmd.none )
+        { init = init
         , view = view
         , update = update
         , subscriptions = subscriptions
         }
 
 
-
--- Update
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
+init : ( Model, Cmd Msg )
+init =
     let
-        mdl =
-            case msg of
-                DisplayMessage message ->
-                    { model | message = message }
-
-                UpdateUsername username ->
-                    { model | username = Just username }
-
-        msgp =
-            Cmd.none
+        model : Model
+        model =
+            Model Nothing "Welcome To Empty App Thing"
     in
-        ( mdl, msgp )
-
-
-
--- Subscriptions
-
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Sub.none
+        ( model, Cmd.none )
