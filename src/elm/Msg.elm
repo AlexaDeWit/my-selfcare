@@ -1,6 +1,7 @@
 module Msg exposing (..)
 
 import Json.Decode exposing (..)
+import Navigation exposing (Location)
 
 
 -- Msg
@@ -11,6 +12,7 @@ import Json.Decode exposing (..)
 type Msg
     = Login LoginForm
     | LocalStorage LocalStorageEvent
+    | OnLocationChange Location
 
 
 type LoginForm

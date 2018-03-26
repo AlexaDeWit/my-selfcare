@@ -12,6 +12,9 @@ import Msg exposing (..)
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
+        OnLocationChange location ->
+            noOp <| { model | route = parseLocation location }
+
         Login (UpdateUsername username) ->
             noOp <| updateFormData (\f -> { f | username = username }) model
 
