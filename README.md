@@ -7,7 +7,7 @@
 
 ## Running
 
-- `yarn run dev` -- This will fire up the webpack dev server at localhsot:8080
+- `yarn run dev` -- This will fire up the webpack dev server at localhost:8080
 
 ### Server Data Mocks
 
