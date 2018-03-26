@@ -2,6 +2,7 @@ module Update exposing (..)
 
 import Model exposing (..)
 import Msg exposing (..)
+import Routing exposing (..)
 
 
 -- Update

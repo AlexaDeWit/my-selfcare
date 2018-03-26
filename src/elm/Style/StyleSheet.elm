@@ -9,6 +9,7 @@ import Style.ColorPalette exposing (..)
 --The stylesheet takes Style Tags and relates them to various styling effects, such as colouration and font etc
 
 
+stylesheet : StyleSheet Styles variatio
 stylesheet =
     Style.styleSheet
         [ Style.style Navigation

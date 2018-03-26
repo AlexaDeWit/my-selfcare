@@ -2,10 +2,8 @@ module Pages.Login exposing (login)
 
 import Html exposing (Html)
 import Element exposing (..)
-import Element.Attributes exposing (..)
 import Style.StyleTags exposing (..)
 import Style.StyleSheet exposing (..)
-import Model exposing (Model)
 import Msg exposing (..)
 import Element.Input as Input
 import Elements exposing (..)
@@ -25,9 +23,11 @@ login =
             ]
 
 
+usernameText : Elem variation
 usernameText =
     basicTextEntry NoStyle "Username" [] (\t -> UpdateUsername t |> Login) Input.text
 
 
+passwordText : Elem variation
 passwordText =
     basicTextEntry NoStyle "Password" [] (\t -> UpdatePassword t |> Login) Input.currentPassword

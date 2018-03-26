@@ -6,6 +6,7 @@ import View exposing (..)
 import Msg exposing (..)
 import Update exposing (..)
 import Subscriptions exposing (..)
+import Routing exposing (..)
 
 
 -- The main entry point. This define how the "program" should be set up, which functions should handle updates, presentations(view), and so on.
@@ -23,4 +24,7 @@ main =
 
 defaultModel : Model
 defaultModel =
-    Model Nothing (LoginFormData "" "")
+    { user = Nothing
+    , loginFormData = LoginFormData "" ""
+    , route = LoginRoute
+    }

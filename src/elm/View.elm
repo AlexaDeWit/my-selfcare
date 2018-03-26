@@ -52,6 +52,7 @@ nav model =
         ]
 
 
+logo : Element Styles variation msg
 logo =
     image NoStyle
         [ maxHeight (px 40), maxWidth (px 40) ]
