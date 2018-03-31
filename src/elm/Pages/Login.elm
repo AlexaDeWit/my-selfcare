@@ -13,6 +13,11 @@ import Bootstrap.Form.Input as Input
 
 login : Html Msg
 login =
+    loginLayout loginElements
+
+
+loginLayout : List (Html Msg) -> Html Msg
+loginLayout fields =
     Html.div
         [ Attributes.class "text-center"
         , Attributes.style
@@ -30,10 +35,15 @@ login =
                 , ( "margin", "0 auto" )
                 ]
             ]
-            [ Input.text
-                [ Input.id "username"
-                , Input.small
-                , Input.defaultValue ""
-                ]
-            ]
+            fields
         ]
+
+
+loginElements : List (Html Msg)
+loginElements =
+    [ Input.text
+        [ Input.id "username"
+        , Input.small
+        , Input.defaultValue ""
+        ]
+    ]
