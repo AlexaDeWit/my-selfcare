@@ -4,7 +4,7 @@ var app = express();
 app.use(express.static('dist'));
 
 app.get("*", function(req, resp) {
-  response.sendFile(__dirname + '/dist/index.html')
+  resp.sendFile(__dirname + '/dist/index.html')
 });
 
 //listen on port

@@ -6,21 +6,28 @@ import Style.StyleTags exposing (..)
 import Style.StyleSheet exposing (..)
 import Msg exposing (..)
 import Element.Input as Input
+import Element.Attributes exposing(..)
 import Elements exposing (..)
 
-
+-- Test
 --The Login Page, for now is just static html, and consumed by the view page if a user model is missing
-
 
 login : Html Msg
 login =
     Element.layout stylesheet <|
-        column Main
-            []
-            [ usernameText
-            , passwordText
-            , button NoStyle [] (text "Login")
-            ]
+        row NoStyle
+          []
+          [ column NoStyle [] []
+          , column Main
+              [ center
+              , verticalCenter 
+              ]
+              [ usernameText
+              , passwordText
+              , button NoStyle [] (text "Login")
+              ]
+          , column NoStyle [] []
+          ]
 
 
 usernameText : Elem variation
