@@ -1,40 +1,39 @@
 module Pages.Login exposing (login)
 
 import Html exposing (Html)
-import Element exposing (..)
-import Style.StyleTags exposing (..)
-import Style.StyleSheet exposing (..)
+import Html.Attributes as Attributes
 import Msg exposing (..)
-import Element.Input as Input
-import Element.Attributes exposing(..)
-import Elements exposing (..)
+import Bootstrap.Form as Form
+import Bootstrap.Form.Input as Input
+
 
 -- Test
 --The Login Page, for now is just static html, and consumed by the view page if a user model is missing
 
+
 login : Html Msg
 login =
-    Element.layout stylesheet <|
-        row NoStyle
-          []
-          [ column NoStyle [] []
-          , column Main
-              [ center
-              , verticalCenter 
-              ]
-              [ usernameText
-              , passwordText
-              , button NoStyle [] (text "Login")
-              ]
-          , column NoStyle [] []
-          ]
-
-
-usernameText : Elem variation
-usernameText =
-    basicTextEntry NoStyle "Username" [] (\t -> UpdateUsername t |> Login) Input.text
-
-
-passwordText : Elem variation
-passwordText =
-    basicTextEntry NoStyle "Password" [] (\t -> UpdatePassword t |> Login) Input.currentPassword
+    Html.div
+        [ Attributes.class "text-center"
+        , Attributes.style
+            [ ( "display", "flex" )
+            , ( "justify-content", "center" )
+            , ( "flex-direction", "column" )
+            , ( "height", "100%" )
+            ]
+        ]
+        [ Form.form
+            [ Attributes.class "form-signin"
+            , Attributes.style
+                [ ( "max-width", "350px" )
+                , ( "width", "350px" )
+                , ( "margin", "0 auto" )
+                ]
+            ]
+            [ Input.text
+                [ Input.id "username"
+                , Input.small
+                , Input.defaultValue ""
+                ]
+            ]
+        ]
