@@ -14,7 +14,6 @@ type alias Model =
     , route : Route
     }
 
-
 type alias User =
     { username : String
     }

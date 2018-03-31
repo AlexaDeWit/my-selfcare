@@ -4,6 +4,7 @@ import Html exposing (Html)
 import Html.Attributes as Attributes
 import Msg exposing (..)
 import Bootstrap.Form as Form
+import Bootstrap.Button as Button
 import Bootstrap.Form.Input as Input
 
 
@@ -28,8 +29,7 @@ loginLayout fields =
             ]
         ]
         [ Form.form
-            [ Attributes.class "form-signin"
-            , Attributes.style
+            [ Attributes.style
                 [ ( "max-width", "350px" )
                 , ( "width", "350px" )
                 , ( "margin", "0 auto" )
@@ -45,5 +45,35 @@ loginElements =
         [ Input.id "username"
         , Input.small
         , Input.defaultValue ""
+        , Input.placeholder "Username"
+        , Input.onInput (\s -> Login (UpdateUsername s))
+        , Input.attrs
+          [ 
+            Attributes.style
+              [
+                ("margin", "5px 0px")
+              ]
+          ]
+        ]
+      , Input.password
+        [ Input.id "password"
+        , Input.small
+        , Input.defaultValue ""
+        , Input.placeholder "Password"
+        , Input.onInput (\s -> Login (UpdatePassword s))
+        , Input.attrs
+          [ 
+            Attributes.style
+              [
+                ("margin", "5px 0px 10px")
+              ]
+          ]
+        ]
+      , Button.button
+        [ Button.primary
+        , Button.onClick Something
+        , Button.block
+        ]
+        [ Html.text "Login"
         ]
     ]

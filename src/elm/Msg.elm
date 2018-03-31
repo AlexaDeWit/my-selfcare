@@ -13,7 +13,7 @@ type Msg
     = Login LoginForm
     | LocalStorage LocalStorageEvent
     | OnLocationChange Location
-
+    | Something
 
 type LoginForm
     = UpdateUsername String
